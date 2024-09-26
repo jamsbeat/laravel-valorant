@@ -78,7 +78,7 @@
                                 <div class=" text-2xl font-semibold font-outfit text-black ">
                                     Filler
                                 </div>
-                                <div class=" text-lg text-black ">
+                                <div class="font-montserrat text-lg text-black ">
                                     Filler
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                 <div class=" text-2xl font-semibold font-outfit text-black ">
                                     Filler
                                 </div>
-                                <div class=" text-lg text-black ">
+                                <div class="font-montserrat text-lg text-black ">
                                     Filler
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                                 <div class=" text-2xl font-semibold font-outfit text-black ">
                                     Filler
                                 </div>
-                                <div class=" text-lg text-black ">
+                                <div class="font-montserrat text-lg text-black ">
                                     Filler
                                 </div>
                             </div>

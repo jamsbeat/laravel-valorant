@@ -10,7 +10,8 @@ export default {
       fontFamily: {
         'kanit': ['Kanit', 'sans-serif'],
         'suse': ['SUSE', 'sans-serif'],
-        'outfit': ['Outfit', 'sans-serif']
+        'outfit': ['Outfit', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif']
       }
     },
   },
