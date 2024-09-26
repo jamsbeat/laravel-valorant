@@ -3,17 +3,16 @@
         <div class="font-semibold font-outfit">Agents</div>
     </x-slot:heading>
     
-    <section class="max-w-screen pb-12 border-b border-black bg-white/10">
+    <section class="max-w-screen pb-12 border-b border-black pt-6">
         <div class="flex justify-between items-start">
-            <div class="bg-white/5 w-[30rem] h-[150px] p-4 font-montserrat rounded-md border border-black/10">
-                &#8226; More than guns and bullets, you’ll choose an Agent armed with 
-                adaptive, swift, and lethal abilities that create opportunities to 
-                let your gunplay shine. No two Agents play alike, just as no two 
-                highlight reels will look the same.
+            <div class="bg-white/50 w-[600px] h-[202px] p-4 font-montserrat rounded border border-black/10">
+                Click on any agent to unveil their detailed profile, showcasing their backstory, tactical role, and an overview of their abilities. 
+                Each agent features three distinct abilities that can turn the tide of a match, along with one powerful ultimate ability that unleashes their full potential. 
+                Whether you’re looking to master a specific agent or simply learn about the different playstyles, this index is your gateway to the world of Valorant.
             </div>
             <div class="flex flex-col items-end">
-                <div class="rounded-md border border-black/10">
-                    <img src="https://placehold.co/480x150" alt="">
+                <div class="rounded border border-black/10">
+                    <img src="https://placehold.co/450x200" alt="">
                 </div>
             </div>
         </div>
