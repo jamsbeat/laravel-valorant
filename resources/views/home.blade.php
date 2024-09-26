@@ -3,8 +3,8 @@
 
     </x-slot:heading>
 
-    <section>
-        <body class="">
+    <section class="max-w-screen">
+        <body class="w-screen">
             <div class="pb-10 mt-28">
                 <div class="text-8xl font-bold font-kanit flex justify-center">
                     VALORANT
