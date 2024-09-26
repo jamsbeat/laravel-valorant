@@ -12,7 +12,10 @@ export default {
         'suse': ['SUSE', 'sans-serif'],
         'outfit': ['Outfit', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif']
-      }
+      },
+      colors: {
+        darkblue: '#0e1822',
+      },
     },
   },
   plugins: [],

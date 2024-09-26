@@ -16,13 +16,13 @@
 
 <body class="h-full">
     <div class="min-h-full">
-        <nav class="bg-black">
+        <nav class="bg-darkblue">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
                             <a href="/">
-                                <img class="h-12 w-14" src="{{ asset('images/valaront-icon2.png') }}" alt="Valorant">
+                                <img class="h-12 w-14" src="{{ asset('images/valorant-logo3.png') }}" alt="Valorant">
                             </a>
                         </div>
                         <div class="hidden md:block">
