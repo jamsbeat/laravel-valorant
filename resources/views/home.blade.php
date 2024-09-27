@@ -18,7 +18,7 @@
         </body>
     </section>
 
-    <section>
+    <section class="pb-16">
         <body class="bg-gray-100 flex justify-center items-center h-screen">
             <div class="grid grid-cols-3 border-t border-black pt-16 ">
                 <div class="w-full flex justify-center">
@@ -66,8 +66,101 @@
         </body>
     </section>
 
-    <section>
-        <div class="pt-20">
+    <section class="pt-16 pb-16">
+        <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+            <div class="relative w-full max-w-screen mx-auto">
+                <!-- Carousel wrapper -->
+                <div class="overflow-hidden relative rounded-lg">
+                    <div
+                        class="flex transition-transform duration-500 ease-in-out transform"
+                        id="carousel"
+                    >
+                        <!-- Slide 1 -->
+                        <div class="min-w-full">
+                            <img
+                                src="https://via.placeholder.com/800x400"
+                                alt="Slide 1"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="min-w-full">
+                            <img
+                                src="https://via.placeholder.com/800x400"
+                                alt="Slide 2"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="min-w-full">
+                            <img
+                                src="https://via.placeholder.com/800x400"
+                                alt="Slide 3"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Navigation buttons -->
+                <button
+                    class="absolute top-1/2 left-0 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
+                    onclick="scrollCarousel(-1)"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 19l-7-7 7-7"
+                        ></path>
+                    </svg>
+                </button>
+                <button
+                    class="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
+                    onclick="scrollCarousel(1)"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+    
+            <script>
+                let currentIndex = 0;
+    
+                function scrollCarousel(direction) {
+                    const carousel = document.getElementById("carousel");
+                    const totalSlides = carousel.children.length;
+                    currentIndex =
+                        (currentIndex + direction + totalSlides) % totalSlides;
+                    carousel.style.transform = `translateX(-${
+                        currentIndex * 100
+                    }%)`;
+                }
+            </script>
+        </body>
+    </section>
+
+    <section class="pt-16">
+        <div class="">
             <div class="w-full max-w-screen items-center">
                 <div class="text-3xl p-4 font-bold font-outfit">• News</div>
                 <div class="grid grid-cols-1 gap-4">

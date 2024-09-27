@@ -5,6 +5,12 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
+  safelist: [
+    'text-red-500',
+    'text-blue-500',
+    'text-green-500',
+    'valred',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -15,6 +21,7 @@ export default {
       },
       colors: {
         darkblue: '#0e1822',
+        valred: '#e84e49',
       },
     },
   },
