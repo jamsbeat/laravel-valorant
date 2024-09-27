@@ -9,11 +9,11 @@
                 <div class="text-8xl font-bold font-kanit flex justify-center">
                     VALORANT
                 </div>
-                <a href="https://playvalorant.com/en-gb/platform-selection/ " class="flex justify-center py-10">
-                    <button class="font-suse bg-black text-white px-6 py-2 shadow-lg rounded-full transition-all duration-300 hover:scale-110">
+                <div class="flex justify-center p-10">
+                    <a href="https://playvalorant.com/en-gb/platform-selection/ " class="font-suse bg-black text-white px-6 py-2 shadow-lg rounded-full transition-all duration-300 hover:scale-110">
                         Play For Free
-                    </button>
-                </a>
+                    </a>
+                </div>
             </div>
         </body>
     </section>
@@ -75,36 +75,48 @@
                         class="flex transition-transform duration-500 ease-in-out transform"
                         id="carousel"
                     >
-                        <!-- Slide 1 -->
-                        <div class="min-w-full">
-                            <img
-                                src="https://via.placeholder.com/800x400"
-                                alt="Slide 1"
-                                class="w-full h-full object-cover"
-                            />
+                    
+                    <!-- Slide 1 -->
+                    <div class="min-w-full relative">
+                        <img
+                            src="https://via.placeholder.com/800x400"
+                            alt="Slide 1"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="w-full absolute bottom-0 left-0 bg-white p-4 text-black font-suse font-semibold text-lg">
+                            Slide 1 Text
                         </div>
-                        <!-- Slide 2 -->
-                        <div class="min-w-full">
-                            <img
-                                src="https://via.placeholder.com/800x400"
-                                alt="Slide 2"
-                                class="w-full h-full object-cover"
-                            />
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="min-w-full relative">
+                        <img
+                            src="https://via.placeholder.com/800x400"
+                            alt="Slide 2"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="w-full absolute bottom-0 left-0 bg-white p-4 text-black font-suse font-semibold text-lg">
+                            Slide 2 Text
                         </div>
-                        <!-- Slide 3 -->
-                        <div class="min-w-full">
-                            <img
-                                src="https://via.placeholder.com/800x400"
-                                alt="Slide 3"
-                                class="w-full h-full object-cover"
-                            />
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="min-w-full relative">
+                        <img
+                            src="https://via.placeholder.com/800x400"
+                            alt="Slide 3"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="w-full absolute bottom-0 left-0 bg-white p-4 text-black font-suse font-semibold text-lg">
+                            Slide 3 Text
                         </div>
+                    </div>
                     </div>
                 </div>
     
                 <!-- Navigation buttons -->
                 <button
-                    class="absolute top-1/2 left-0 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
+                    class="absolute top-1/2 left-5 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
                     onclick="scrollCarousel(-1)"
                 >
                     <svg
@@ -123,7 +135,7 @@
                     </svg>
                 </button>
                 <button
-                    class="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
+                    class="absolute top-1/2 right-5 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
                     onclick="scrollCarousel(1)"
                 >
                     <svg
@@ -162,7 +174,7 @@
     <section class="pt-16">
         <div class="">
             <div class="w-full max-w-screen items-center">
-                <div class="text-3xl p-4 font-bold font-outfit">• News</div>
+                <div class="text-3xl p-4 h-[60px] font-bold font-outfit">• News</div>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="/forum">
                         <div class="bg-white shadow-md rounded-lg overflow-hidden flex">

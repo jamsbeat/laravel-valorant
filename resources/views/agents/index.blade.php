@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        <div class="font-semibold font-outfit ">Agents</div>
+        <div class="font-semibold font-outfit">Agents</div>
     </x-slot:heading>
     
     <section class="max-w-screen pb-12 border-b border-black pt-6">
