@@ -1,44 +1,154 @@
 <x-layout>
     <x-slot:heading>
-        <div class="font-semibold font-outfit underline" style="color: {{ $agent->color }}">{{ $agent->name }}</div>
+        <div class="font-semibold font-outfit underline text-4xl" style="color: {{ $agent->color }}">{{ $agent->name }}</div>
      </x-slot:heading>
 
-     <section class="max-w-screen pb-12 border-b border-black pt-6">
+     <section class="max-w-screen pb-12 border-b border-black pt-12" x-data="{ open: null }">
         <div class="flex justify-between items-start">
-            <div class="flex flex-col w-[600px] p-4 font-montserrat rounded border border-black/10" style="background-color: {{ $agent->color }};">
+            <div class="flex flex-col w-[600px] p-4 font-montserrat rounded border border-black/10 bg-gray-400/20">
+
+                <div class="mt-3 mb-6 pl-1
+                text-3xl font-semibold">Description :</div>
                 <!-- Agent description -->
-                {{ $agent->description }}
+                <div class="font-montserrat bg-white rounded border border-black/10 p-4 text-xl">{{ $agent->description }}</div>
+
+                <div class="mt-6 pl-1
+                text-3xl font-semibold">Abilities :</div>
     
                 <!-- Grid section directly under the description -->
-                <div class="grid grid-cols-3 gap-4 mt-6">
-                    <div class="bg-white p-4 rounded border border-black/10">
+                <div class="grid grid-cols-3 gap-4 mt-6 text-2xl">
+                    <!-- Grid Item 1 -->
+                    <div @click="open = 'item1'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
+                    hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
-                            <img src="https://placehold.co/144" alt="">
-                            <div class="pt-4 font-outfit">Grid Item 1</div>
+                            <img src="{{ $agent->ability->ability1_icon }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
+                            rounded-md"
+                            style="background-color: {{ $agent->color }};">
+                            <div class="pt-4 font-outfit">{{ $agent->ability->ability1 }}</div>
                         </div>
                     </div>
-                    <div class="bg-white p-4 rounded border border-black/10">
+                    <!-- Grid Item 2 -->
+                    <div @click="open = 'item2'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
+                    hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
-                            <img src="https://placehold.co/144" alt="">
-                            <div class="pt-4 font-outfit">Grid Item 2</div>
+                            <img src="{{ $agent->ability->ability2_icon }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
+                            rounded-md"
+                            style="background-color: {{ $agent->color }};">
+                            <div class="pt-4 font-outfit">{{ $agent->ability->ability2 }}</div>
                         </div>
                     </div>
-                    <div class="bg-white p-4 rounded border border-black/10">
+                    <!-- Grid Item 3 -->
+                    <div @click="open = 'item3'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
+                    hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
-                            <img src="https://placehold.co/144" alt="">
-                            <div class="pt-4 font-outfit">Grid Item 3</div>
+                            <img src="{{ $agent->ability->ability3_icon }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
+                            rounded-md"
+                            style="background-color: {{ $agent->color }};">
+                            <div class="pt-4 font-outfit">{{ $agent->ability->ability3 }}</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ultimate -->
+                <div @click="open = 'ultimate'" class="group cursor-pointer flex flex-cols mt-6 bg-white rounded-md border border-black/10
+                hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
+                    <div class="p-4">
+                        <!-- Image with dynamic background color on hover -->
+                        <img src="{{ $agent->ability->ultimate_icon }}" alt="" 
+                            class="p-4 bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out 
+                            h-[133px] w-[133px] rounded-md"
+                            style="background-color: {{ $agent->color }};"> <!-- Use inline style for dynamic color -->
+                    </div>
+                    <div class="flex self-center">
+                        <div class="font-outfit text-2xl">{{ $agent->ability->ultimate }}</div>
+                    </div>
+
+                    <!-- ULT grid aligned to the end -->
+                    <div class="ml-auto p-4 self-center h-full">
+                        <div class="grid grid-cols-1 
+                        text-center font-bold font-suse text-xs">
+                            <div>U</div>
+                            <div>L</div>
+                            <div>T</div>
+                            <div>I</div>
+                            <div>M</div>
+                            <div>A</div>
+                            <div>T</div>
+                            <div>E</div>
                         </div>
                     </div>
                 </div>
             </div>
     
+            <!-- Agent Portrait -->
             <div class="flex flex-col items-end">
-                <div class="rounded">
-                    <img src="https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/fullportrait.png" alt="" class="w-auto h-[500px]">
+                <div class="rounded mt-3">
+                    <img src="{{ $agent->portrait }}" alt="" class="w-auto h-[700px]">
                 </div>
             </div>
         </div>
+    
+        <!-- Pop-up Modals for Grid Items and Ultimate -->
+        <!-- Modal for Grid Item 1 -->
+        <div x-show="open === 'item1'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
+            <div @click.stop class="bg-white p-6 rounded w-[400px]">
+                <h2 class="text-xl font-bold mb-4">{{ $agent->ability->ability1 }}</h2>
+                <p>{{ $agent->ability->ability1_desc }}</p>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
+
+        <!-- Modal for Grid Item 2 -->
+        <div x-show="open === 'item2'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
+            <div @click.stop class="bg-white p-6 rounded w-[400px]">
+                <h2 class="text-xl font-bold mb-4">{{ $agent->ability->ability2 }}</h2>
+                <p>{{ $agent->ability->ability2_desc }}</p>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
+
+        <!-- Modal for Grid Item 3 -->
+        <div x-show="open === 'item3'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
+            <div @click.stop class="bg-white p-6 rounded w-[400px]">
+                <h2 class="text-xl font-bold mb-4">{{ $agent->ability->ability3 }}</h2>
+                <p>{{ $agent->ability->ability3_desc }}</p>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
+
+        <!-- Modal for Ultimate -->
+        <div x-show="open === 'ultimate'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
+            <div @click.stop class="bg-white p-6 rounded w-[400px]">
+                <h2 class="text-xl font-bold mb-4">{{ $agent->ability->ultimate }}</h2>
+                <p>{{ $agent->ability->ultimate_desc }}</p>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+            </div>
+        </div>
     </section>
+
+    <section class="pt-12 pb-12">
+        <div class="font-semibold text-3xl
+        pb-2 pl-1">Role :</div>
+        <div class="flex justify-between mt-6 bg-white rounded-md border-[16px] border-gray-400/20 w-full">
+            <div class="grid grid-cols-1 pl-4 max-w-[60%]"> <!-- Set a max-width for the description -->
+                <div class="flex mt-6 pl-1">
+                    <div class="font-outfit text-2xl pt-2">{{ $agent->role }}</div>
+                    <div class="font-montserrat font-semibold text-xs pl-1"></div>
+                </div>
+                <div class="pl-1 pb-6">
+                    <div>A phantom of a memory, Omen hunts in the shadows. He renders enemies blind, teleports across the field, then lets paranoia take hold as his foe scrambles to uncover where he might strike next.</div>
+                </div>
+            </div>
+            
+            <div></div>
+        
+            <!-- Role Icon Section -->
+            <div class="p-4">
+                <img src="{{ asset('images/' . $agent->role_icon) }}" alt="" class="bg-black h-[133px] w-[133px] rounded-full 
+                border-2 border-black">
+            </div>
+        </div>
+   </section>
+    
     
 
     

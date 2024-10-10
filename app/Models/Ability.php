@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agent extends Model
+class Ability extends Model
 {
     use HasFactory;
-
-    public function ability()
+    
+    public function agents()
     {
-        return $this->belongsTo(Ability::class);
+        return $this->hasMany(Agent::class);
     }
 }

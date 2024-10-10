@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\Ability::class)->nullable;
             $table->string('name');
             $table->string('description');
             $table->string('role');
             $table->string('icon');
             $table->string('role_icon');
+            $table->string('portrait');
             $table->string('color');
             $table->timestamps();
         });

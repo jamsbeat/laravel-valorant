@@ -174,13 +174,13 @@
     <section class="pt-16">
         <div class="">
             <div class="w-full max-w-screen items-center">
-                <div class="text-3xl p-4 h-[60px] font-bold font-outfit">• News</div>
+                <div class="text-3xl p-4 py-2 h-[60px] font-bold font-outfit">• News</div>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="/forum">
                         <div class="bg-white shadow-md rounded-lg overflow-hidden flex">
                             <img class="w-1/4 h-[180px] object-cover" src="https://via.placeholder.com/180" alt="Image 1">
                             <div class="p-4">
-                                <div class=" text-2xl font-semibold font-outfit text-black pb-1 underline">
+                                <div class=" text-2xl font-semibold font-outfit text-black py-2 underline">
                                     Title
                                 </div>
                                 <div class="font-montserrat text-lg text-black ">
@@ -193,7 +193,7 @@
                         <div class="bg-white shadow-md rounded-lg overflow-hidden flex">
                             <img class="w-1/4 h-[180px] object-cover" src="https://via.placeholder.com/180" alt="Image 1">
                             <div class="p-4">
-                                <div class=" text-2xl font-semibold font-outfit text-black pb-1 underline">
+                                <div class=" text-2xl font-semibold font-outfit text-black py-2 underline">
                                     Title
                                 </div>
                                 <div class="font-montserrat text-lg text-black ">
@@ -206,7 +206,7 @@
                         <div class="bg-white shadow-md rounded-lg overflow-hidden flex">
                             <img class="w-1/4 h-[180px] object-cover" src="https://via.placeholder.com/180" alt="Image 1">
                             <div class="p-4">
-                                <div class=" text-2xl font-semibold font-outfit text-black pb- underline">
+                                <div class=" text-2xl font-semibold font-outfit text-black py-2 underline">
                                     Title
                                 </div>
                                 <div class="font-montserrat text-lg text-black ">
