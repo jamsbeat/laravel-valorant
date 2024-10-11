@@ -14,11 +14,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--AlpineJS-->
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!--LiveWire-->
+        @livewireStyles
 </head>
 
 <body class="h-full">
     <div class="min-h-full">
-        <nav class="bg-darkblue">
+        <nav class="bg-darkblue ">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
@@ -48,6 +50,24 @@
 
                                         <button class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-gray-300 shadow-sm hover:bg-gray-700 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-suse" type="submit">Log Out</button>
                                     </form>
+
+                                    <style>
+                                        [x-cloak] { display: none !important; }
+                                    </style>
+                        
+                                    
+                                    
+                                    <div x-data="{ open: false }" class="inline-flex relative cursor-pointer">
+                                        <x-nav-link @click="open = ! open" class="">
+                                            {{ auth()->user()->first_name }}
+                                        </x-nav-link>
+                                    
+                                        <div x-cloak x-show="open" @click.away="open = false" 
+                                            class="absolute top-12 left-0 p-2 bg-white border border-gray-200 rounded-lg shadow w-auto">
+                                            <div class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Profile</div>
+                                            <div class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Settings</div>
+                                        </div>
+                                    </div>
                             @endauth
                         </div>
                     </div>
@@ -67,6 +87,7 @@
         </header>
 
         <main>
+            @livewireScripts
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                 {{ $slot }}
             </div>

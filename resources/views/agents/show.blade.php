@@ -16,7 +16,7 @@
                 text-3xl font-semibold">Abilities :</div>
     
                 <!-- Grid section directly under the description -->
-                <div class="grid grid-cols-3 gap-4 mt-6 text-2xl">
+                <div class="grid grid-cols-3 gap-4 mt-6 text-2xl mb-3">
                     <!-- Grid Item 1 -->
                     <div @click="open = 'item1'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <!-- Ultimate -->
-                <div @click="open = 'ultimate'" class="group cursor-pointer flex flex-cols mt-6 bg-white rounded-md border border-black/10
+                <div @click="open = 'ultimate'" class="cursor-pointer flex flex-cols mt-3 bg-white rounded-md border border-black/10
                 hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                     <div class="p-4">
                         <!-- Image with dynamic background color on hover -->

@@ -3,7 +3,7 @@
         <div class="font-semibold font-outfit">Agents</div>
     </x-slot:heading>
     
-    <section class="max-w-screen pb-12 border-b border-black pt-6">
+    <section class="max-w-screen pb-16 border-b border-black pt-10">
         <div class="flex justify-between items-start">
             <div class="bg-white/50 w-[600px] h-[202px] p-4 font-montserrat 
             rounded border border-black/10">
@@ -20,7 +20,7 @@
     </section>
     
     
-    <div class="grid grid-cols-3 gap-4 pt-12">
+    <div class="grid grid-cols-3 gap-4 pt-16">
         @foreach ($agents as $agent)
         <li class="list-none">
             <a  href="/agents/{{ $agent['id'] }}">
@@ -45,4 +45,5 @@
         </li>
         @endforeach
     </div>
+
 </x-layout>
