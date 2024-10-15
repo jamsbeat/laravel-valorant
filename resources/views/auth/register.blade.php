@@ -50,12 +50,12 @@
                     </x-form-field>
 
                     <x-form-field>
-                        <x-form-label for="confirm_password">Confirm Password</x-form-label>
+                        <x-form-label for="password_confirmation">Confirm Password</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="confirm_password" id="confirm_password" type="password_confirmation" require />
+                            <x-form-input name="password_confirmation" id="password_confirmation" type="password" require />
 
-                            <x-form-error name="confirm_password" />
+                            <x-form-error name="password_confirmation" />
                         </div>
                     </x-form-field>
                 </div>

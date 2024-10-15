@@ -17,10 +17,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('role');
-            $table->string('icon');
-            $table->string('role_icon');
-            $table->string('portrait');
-            $table->string('color');
+            $table->string('role_description');
+            $table->text('icon');
+            $table->text('role_icon');
+            $table->text('portrait');
+            $table->text('background');
+            $table->text('color');
             $table->timestamps();
         });
     }

@@ -137,6 +137,14 @@
         @endforeach
     </section>
 
+    <section>
+        <div class="p-4">
+            <x-form-button>
+                Hello
+            </x-form-button>
+        </div>
+    </section>
+
 
 
 </x-layout>
