@@ -1,16 +1,17 @@
 <x-layout>
     <x-slot:heading>
-
+        
     </x-slot:heading>
 
     <section class="max-w-screen">
         <body class="w-screen">
             <div class="pb-10 mt-28">
-                <div class="text-8xl font-bold font-kanit flex justify-center">
+                <div class="text-8xl  font-bold font-valorant 
+                flex justify-center">
                     VALORANT
                 </div>
                 <div class="flex justify-center p-10">
-                    <a href="https://playvalorant.com/en-gb/platform-selection/ " class="font-suse bg-black text-white px-6 py-2 shadow-lg rounded-full transition-all duration-300 hover:scale-110">
+                    <a href="https://playvalorant.com/en-gb/platform-selection/ " class="font-suse bg-black text-white px-6 py-2 shadow-lg rounded-full transition-all duration-300 hover:scale-125">
                         Play For Free
                     </a>
                 </div>
@@ -68,7 +69,7 @@
 
     <section class="pt-16 pb-16">
         <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-            <div class="relative w-full max-w-screen mx-auto">
+            <div class="relative w-[1151px] max-w-screen mx-auto">
                 <!-- Carousel wrapper -->
                 <div class="overflow-hidden relative rounded-lg">
                     <div
@@ -81,7 +82,7 @@
                         <img
                             src="https://via.placeholder.com/800x400"
                             alt="Slide 1"
-                            class="w-full h-full object-cover"
+                            class="w-[1151px] h-full object-cover"
                         />
                         <div class="w-full absolute bottom-0 left-0 bg-white p-4 text-black font-suse font-semibold text-lg">
                             Slide 1 Text

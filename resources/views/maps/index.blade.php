@@ -5,7 +5,7 @@
 
     <section class="max-w-screen pb-16 border-b border-black pt-10">
         <div class="flex justify-between items-start">
-            <div class="bg-white/50 w-[600px] h-[220px] p-4 font-montserrat 
+            <div class="bg-white/50 w-1/2 h-[220px] p-4 font-montserrat 
             rounded border border-black/10">
             Step into a world designed for tactical brilliance and unforgettable moments. 
             Each map is meticulously crafted to test your creativity, challenge your team’s synergy, and deliver pulse-pounding highlights. 
@@ -136,15 +136,5 @@
             </div>
         @endforeach
     </section>
-
-    <section>
-        <div class="p-4">
-            <x-form-button>
-                Hello
-            </x-form-button>
-        </div>
-    </section>
-
-
 
 </x-layout>
