@@ -1,6 +1,6 @@
 <div>
     <div class="my-12">
-        <input type="text" wire:model.live="search" placeholder="Search agents/role ..." class="mb-4 p-2 rounded bg-white/50 border-black/5 w-full md:w-1/2 lg:w-1/3">
+        <input type="text" wire:model.live="search" placeholder="Search agents/role ..." class="mb-4 p-2 rounded bg-white/50 border-black/5 w-1/4 md:w-1/2 lg:w-1/3">
     </div>
 
     <div class="flex justify-center items-center">
