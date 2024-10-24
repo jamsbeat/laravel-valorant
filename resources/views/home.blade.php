@@ -6,7 +6,7 @@
     <section class="max-w-screen">
         <body class="w-screen">
             <div class="pb-10 mt-28">
-                <div class="text-8xl font-bold font-kanit flex justify-center">
+                <div class="text-8xl font-bold font-valorant flex justify-center">
                     VALORANT
                 </div>
                 <div class="flex justify-center p-10">

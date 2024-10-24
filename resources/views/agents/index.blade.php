@@ -20,30 +20,8 @@
     </section>
     
     
-    <div class="grid grid-cols-3 gap-4 pt-16">
-        @foreach ($agents as $agent)
-        <li class="list-none">
-            <a  href="/agents/{{ $agent['id'] }}">
-                <body class="flex items-center justify-center">
-                    <div class="flex items-center w-full max-w-6xl rounded-full bg-gray-800 transition-all duration-200 hover:scale-105 hover:shadow-lg" style="background-image: url(/images/playcard-bg.png)">
-                    <img src="{{ asset('images/' . $agent->icon) }}" alt="Gekko" class="h-20 w-20 border-2 border-darkblue rounded-full" />
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="text-2xl font-bold font-kanit uppercase" style="color: {{ $agent->color }};">
-                            {{ $agent['name'] }}
-                        </div>
-                        <div class="text-gray-400/95 text-sm font-suse">{{ $agent['role'] }}</div>
-                        <div></div>
-                    </div>
-                    <div class="ml-auto flex justify-end">
-                        <div class="flex h-20 w-20 rounded-full ">
-                            <img src="{{ asset('images/' . $agent->role_icon) }}" alt="Icon" class="h-20 w-20 border-black border-2 rounded-full" />
-                        </div>
-                    </div>
-                    </div>
-                </body> 
-            </a>                 
-        </li>
-        @endforeach
+    <div class="">
+        @livewire('agent-search')
     </div>
 
 </x-layout>

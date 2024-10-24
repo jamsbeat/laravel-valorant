@@ -15,8 +15,15 @@ class AgentController extends Controller
                 'agents' => $agents
             ]);
     }
+
+
     public function show(Agent $agent)
     {
         return view('agents.show', ['agent' => $agent]);
+    }
+
+    public function showAgents($id) {
+        $agent = Agent::find($id);
+        return view('agent-list', compact('agent'));
     }
 }

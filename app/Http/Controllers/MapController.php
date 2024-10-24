@@ -15,4 +15,9 @@ class MapController extends Controller
                 'maps' => $maps
             ]);
     }
+
+    public function showMaps($id) {
+        $map = Map::find($id);
+        return view('map-list', compact('map'));
+    }
 }
