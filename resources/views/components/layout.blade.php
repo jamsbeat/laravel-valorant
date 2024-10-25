@@ -95,5 +95,17 @@
         </main>
 
     </div>
+
+    <footer>
+        <div class="bg-darkblue text-white text-center py-4 max-w-screen">
+            <h1>Offical Valorant Social Media</h1>
+            <div class="py-4">
+                <a href="https://www.facebook.com/valorant" class="text-white hover:text-gray-300">Facebook</a>
+                <a href="https://www.twitter.com/valorant" class="px-6 text-white hover:text-gray-300">Twitter</a>
+                <a href="https://www.instagram.com/valorant" class="text-white hover:text-gray-300">Instagram</a>
+            </div>
+            <p>&copy; 2024 Valorant</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -16,15 +16,19 @@ return new class extends Migration
             $table->string('name_1');
             $table->string('description_1');
             $table->string('icon_1');
+            $table->string('video_1')->nullable();
             $table->string('name_2');
             $table->string('description_2');
             $table->string('icon_2');
+            $table->string('video_2')->nullable();
             $table->string('name_3');
             $table->string('description_3');
             $table->string('icon_3');
+            $table->string('video_3')->nullable();
             $table->string('ultimate');
             $table->string('description_u');
             $table->string('icon_u');
+            $table->string('video_u')->nullable();
             $table->timestamps();
         });
     }

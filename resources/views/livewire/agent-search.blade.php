@@ -1,14 +1,14 @@
 <div>
     <div class="my-12">
-        <input type="text" wire:model.live="search" placeholder="Search agents/role ..." class="mb-4 p-2 rounded bg-white/50 border-black/5 w-1/4 md:w-1/2 lg:w-1/3">
+        <x-form-input wire:model.live="search" placeholder="Search Agents" class="h-full" />
     </div>
 
     <div class="flex justify-center items-center">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-3 md:gap-x-10 lg:gap-x-20">  
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-3 md:gap-x-10 lg:gap-x-15">  
             @foreach($agents as $agent)
                 <div class="list-none">
                     <a href="/agents/{{ $agent['id'] }}">
-                        <div class="flex items-center w-full lg:min-w-4xl max-w-lg md:max-w-xl lg:max-w-5xl rounded-full bg-gray-800 transition-transform duration-300 hover:scale-105 hover:shadow-lg" style="background-image: url(/images/playcard-bg.png)">
+                        <div class="flex items-center w-full lg:min-w-4xl max-w-2xl md:max-w-3xl lg:max-w-full rounded-full bg-gray-800 transition-transform duration-300 hover:scale-105 hover:shadow-lg" style="background-image: url(/images/playcard-bg.png)">
                             <img src="{{ $agent->icon }}" alt="{{ $agent['name'] }}" class="h-20 w-20 border-2 border-darkblue rounded-full" />
                             <div class="grid grid-cols-2 gap-2">
                                 <div class="text-2xl font-bold font-kanit uppercase" style="color: {{ $agent->color }};">
@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a>                 
+                    </a>
                 </div>
             @endforeach
         </div>

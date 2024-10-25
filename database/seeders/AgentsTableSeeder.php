@@ -13,6 +13,7 @@ class AgentsTableSeeder extends Seeder
         DB::table('agents')->insert([
             [
                 'id' => 1,
+                'agent_lore_id' => 1,
                 'ability_id' => 1,
                 'name' => 'Gekko',
                 'description' => 'Gekko the Angeleno leads a tight-knit crew of calamitous creatures. His buddies bound forward, scattering enemies out of the way, with Gekko chasing them down to regroup and go again.',
@@ -28,6 +29,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 2,
+                'agent_lore_id' => 2,
                 'ability_id' => 2,
                 'name' => 'Fade',
                 'description' => 'Turkish bounty hunter Fade unleashes the power of raw nightmare to seize enemy secrets. Attuned with terror itself, she hunts down targets and reveals their deepest fears - before crushing them in the dark.',
@@ -43,6 +45,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 3,
+                'agent_lore_id' => 3,
                 'ability_id' => 3,
                 'name' => 'Breach',
                 'description' => 'The bionic Swede Breach fires powerful, targeted kinetic blasts to aggressively clear a path through enemy ground. The damage and disruption he inflicts ensures no fight is ever fair.',
@@ -58,6 +61,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 4,
+                'agent_lore_id' => 4,
                 'ability_id' => 4,
                 'name' => 'Deadlock',
                 'description' => 'Norwegian operative Deadlock deploys an array of cutting-edge nanowire to secure the battlefield from even the most lethal assault. No one escapes her vigilant watch, nor survives her unyielding ferocity.',
@@ -73,6 +77,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 5,
+                'agent_lore_id' => 5,
                 'ability_id' => 5,
                 'name' => 'Raze',
                 'description' => 'Raze explodes out of Brazil with her big personality and big guns. With her blunt-force-trauma playstyle, she excels at flushing entrenched enemies and clearing tight spaces with a generous dose of boom.',
@@ -88,6 +93,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 6,
+                'agent_lore_id' => 6,
                 'ability_id' => 6,
                 'name' => 'Chamber',
                 'description' => 'Well-dressed and well-armed, French weapons designer Chamber expels aggressors with deadly precision. He leverages his custom arsenal to hold the line and pick off enemies from afar, with a contingency built for every plan.',
@@ -103,6 +109,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 7,
+                'agent_lore_id' => 7,
                 'ability_id' => 7,
                 'name' => 'KAY/O',
                 'description' => 'KAY/O is a machine of war built for a single purpose: neutralizing radiants. His power to Suppress enemy abilities dismantles his opponents\' capacity to fight back, securing him and his allies the ultimate edge.',
@@ -118,6 +125,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 8,
+                'agent_lore_id' => 8,
                 'ability_id' => 8,
                 'name' => 'Skye',
                 'description' => 'Hailing from Australia, Skye and her band of beasts trailblaze the way through hostile territory. With her creations hampering the enemy, and her power to heal others, the team is strongest and safest by Skye\'s side.',
@@ -133,6 +141,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 9,
+                'agent_lore_id' => 9,
                 'ability_id' => 9,
                 'name' => 'Cypher',
                 'description' => 'The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy\'s every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.',
@@ -148,6 +157,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 10,
+                'agent_lore_id' => 10,
                 'ability_id' => 10,
                 'name' => 'Sova',
                 'description' => 'Born from the eternal winter of Russia\'s tundra, Sova tracks, finds, and eliminates enemies with ruthless efficiency and precision. His custom bow and incredible scouting abilities ensure that even if you run, you cannot hide',
@@ -163,6 +173,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 11,
+                'agent_lore_id' => 11,
                 'ability_id' => 11,
                 'name' => 'Killjoy',
                 'description' => 'The genius of Germany, Killjoy effortlessly secures key battlefield positions with her arsenal of inventions. If their damage doesn\'t take her enemies out, the debuff her robots provide will make short work of them.',
@@ -178,6 +189,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 12,
+                'agent_lore_id' => 12,
                 'ability_id' => 12,
                 'name' => 'Harbor',
                 'description' => 'Hailing from India’s coast, Harbor storms the field wielding ancient technology with dominion over water. He unleashes frothing rapids and crushing waves to shield his allies, or pummel those that oppose him.',
@@ -193,6 +205,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 13,
+                'agent_lore_id' => 13,
                 'ability_id' => 13,
                 'name' => 'Viper',
                 'description' => 'The American Chemist, Viper deploys an array of poisonous chemical devices to control the battlefield and choke the enemy\'s vision. If the toxins don\'t kill her prey, her mindgames surely will.',
@@ -208,6 +221,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 14,
+                'agent_lore_id' => 14,
                 'ability_id' => 14,
                 'name' => 'Phoenix',
                 'description' => 'Hailing from the U.K., Phoenix\'s star power shines through in his fighting style, igniting the battlefield with flash and flare. Whether he\'s got backup or not, he\'s rushing in to fight on his own terms.',
@@ -223,6 +237,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 15,
+                'agent_lore_id' => 15,
                 'ability_id' => 15,
                 'name' => 'Astra',
                 'description' => 'Ghanaian Agent Astra harnesses the energies of the cosmos to reshape battlefields to her whim. With full command of her astral form and a talent for deep strategic foresight, she\'s always eons ahead of her enemy\'s next move.',
@@ -238,6 +253,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 16,
+                'agent_lore_id' => 16,
                 'ability_id' => 16,
                 'name' => 'Brimstone',
                 'description' => 'Joining from the U.S.A., Brimstone\'s orbital arsenal ensures his squad always has the advantage. His ability to deliver utility precisely and safely make him the unmatched boots-on-the-ground commander.',
@@ -253,6 +269,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 17,
+                'agent_lore_id' => 17,
                 'ability_id' => 17,
                 'name' => 'Iso',
                 'description' => 'Chinese fixer for hire Iso falls into a flow state to dismantle the opposition. Reconfiguring ambient energy into bulletproof protection, he advances with focus towards his next duel to the death.',
@@ -268,6 +285,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 18,
+                'agent_lore_id' => 18,
                 'ability_id' => 18,
                 'name' => 'Clove',
                 'description' => 'Scottish troublemaker Clove makes mischief for enemies in both the heat of combat and the cold of death. The young immortal keeps foes guessing, even from beyond the grave, their return to the living only ever a moment away.',
@@ -283,6 +301,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 19,
+                'agent_lore_id' => 19,
                 'ability_id' => 19,
                 'name' => 'Neon',
                 'description' => 'Filipino Agent Neon surges forward at shocking speeds, discharging bursts of bioelectric radiance as fast as her body generates it. She races ahead to catch enemies off guard then strikes them down quicker than lightning',
@@ -298,6 +317,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 20,
+                'agent_lore_id' => 20,
                 'ability_id' => 20,
                 'name' => 'Yoru',
                 'description' => 'Japanese native Yoru rips holes straight through reality to infiltrate enemy lines unseen. Using deception and aggression in equal measure, he gets the drop on each target before they know where to look.',
@@ -313,6 +333,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 21,
+                'agent_lore_id' => 21,
                 'ability_id' => 21,
                 'name' => 'Sage',
                 'description' => 'The bastion of China, Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends and stave off forceful assaults, she provides a calm center to a hellish battlefield.',
@@ -328,6 +349,7 @@ class AgentsTableSeeder extends Seeder
             ],
             [
                 'id' => 22,
+                'agent_lore_id' => 22,
                 'ability_id' => 22,
                 'name' => 'Reyna',
                 'description' => 'Forged in the heart of Mexico, Reyna dominates single combat, popping off with each kill she scores. Her capability is only limited by her raw skill, making her sharply dependant on performance.',

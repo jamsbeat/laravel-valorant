@@ -5,7 +5,7 @@
     
     <section class="max-w-screen pb-16 border-b border-black pt-10">
         <div class="flex justify-between items-start">
-            <div class="bg-white/50 w-[600px] h-[202px] p-4 font-montserrat 
+            <div class="bg-white/50 p-4 font-montserrat 
             rounded border border-black/10">
                 Click on any agent to unveil their detailed profile, showcasing their backstory, tactical role, and an overview of their abilities. 
                 Each agent features three distinct abilities that can turn the tide of a match, along with one powerful ultimate ability that unleashes their full potential. 
