@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agent_lores', function (Blueprint $table) {
+        Schema::create('favorite_agents', function (Blueprint $table) {
             $table->id();
-            $table->text('lores');
-            $table->text('past_experience');
-            $table->text('appearance');
+            $table->foreignIdFor(\App\Models\User::class);
+            $table->foreignIdFor(\App\Models\Agent::class);
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('agent_lores');
+        Schema::dropIfExists('favorite_agents');
     }
 };

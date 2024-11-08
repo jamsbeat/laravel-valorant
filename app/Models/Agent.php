@@ -11,6 +11,8 @@ class Agent extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'role', 'description', 'image'];
+
     public function ability()
     {
         return $this->belongsTo(Ability::class);
@@ -19,5 +21,10 @@ class Agent extends Model
     public function lore()
     {
         return $this->belongsTo(AgentLore::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'favorite_agents');
     }
 }

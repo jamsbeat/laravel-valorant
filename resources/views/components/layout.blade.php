@@ -64,8 +64,8 @@
                                     
                                         <div x-cloak x-show="open" @click.away="open = false" 
                                             class="absolute top-12 left-0 p-2 bg-white border border-gray-200 rounded-lg shadow w-auto">
-                                            <div class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Profile</div>
-                                            <div class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Settings</div>
+                                            <a href="/profile" class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Profile</a>
+                                            <a class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Settings</a>
                                         </div>
                                     </div>
                             @endauth

@@ -11,7 +11,7 @@ class AgentLore extends Model
 
     protected $fillable = ['agent_id', 'lore', 'past_experience', 'appearance'];
 
-    public function agent()
+    public function agents()
     {
         return $this->hasMany(Agent::class);
     }

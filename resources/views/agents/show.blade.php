@@ -178,7 +178,7 @@
                 </button>
                 <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
                     <div class="p-4 text-sm sm:text-base text-pretty">
-                        {{ $agent->lore ? $agent->lore->lore : 'No lore available' }}
+                        {{ $agent->lore ? $agent->lore->lores : 'No lore available' }}
                     </div>
                 </div>
             </div>
