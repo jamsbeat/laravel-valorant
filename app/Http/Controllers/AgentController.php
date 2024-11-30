@@ -30,7 +30,7 @@ class AgentController extends Controller
         $agent = Agent::find($id);
         return view('agent-list', compact('agent'));
     }
-
+    
     #public function favoriteAgent($agentId)
     #{
     #    $user = auth()->user();

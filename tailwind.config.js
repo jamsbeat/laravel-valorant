@@ -22,6 +22,9 @@ export default {
       colors: {
         darkblue: '#0e1822',
         reyna: '#b757ad',
+        valred: '#ff4654',
+        valdred: '#ba3a46',
+        valblack: '#111823',
       },
     },
   },

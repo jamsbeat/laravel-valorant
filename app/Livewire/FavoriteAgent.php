@@ -3,29 +3,39 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Agent;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Agent;
 
 class FavoriteAgent extends Component
 {
     public $agentId;
+    public $favorited;
 
     public function mount($agentId)
     {
         $this->agentId = $agentId;
+        $this->favorited = Auth::check() && Auth::user()->favorites()->where('agent_id', $agentId)->exists();
     }
 
     public function favorite()
     {
-        $user = Auth::user();
-        $favoriteAgents = $user->favoriteAgents();
+        if (!Auth::check()) {
+            return;
+        }
 
-        if ($favoriteAgents->where('agent_id', $this->agentId)->exists()) {
-            $favoriteAgents->detach($this->agentId);
-            session()->flash('success', 'Agent removed from favorites!');
+        $user = Auth::user();
+
+        $favorite = $user->favorites()->where('agent_id', $this->agentId)->first();
+
+        if ($favorite) {
+            $favorite->delete();
+            $this->favorited = false;
         } else {
-            $favoriteAgents->attach($this->agentId);
-            session()->flash('success', 'Agent added to favorites!');
+            $user->favorites()->create([
+                'agent_id' => $this->agentId,
+                'user_id' => $user->id, 
+            ]);
+            $this->favorited = true;
         }
     }
 

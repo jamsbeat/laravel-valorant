@@ -9,5 +9,10 @@ class FavoriteAgent extends Model
 {
     use HasFactory;
 
-    
+    protected $fillable = ['agent_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

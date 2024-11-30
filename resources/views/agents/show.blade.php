@@ -1,11 +1,16 @@
 <x-layout>
     <x-slot:heading>
-        <div class="font-semibold font-outfit underline text-4xl" style="color: {{ $agent->color }}">{{ $agent->name }}</div>
+        <div class="font-semibold font-outfit underline text-4xl flex items-center" style="color: {{ $agent->color }}">
+            <span>{{ $agent->name }}</span>
+            @auth
+                @livewire('favorite-agent', ['agentId' => $agent->id])
+            @endauth
+        </div>
      </x-slot:heading>
 
      <section class="max-w-screen pb-12 pt-12" x-data="{ open: null }">
         <div class="flex justify-between items-start">
-            <div class="flex flex-col w-[600px] p-4 font-montserrat rounded bg-gray-400/20">
+            <div class="flex flex-col w-[600px] p-4 font-montserrat rounded bg-gray-400/40">
 
                 <div class="mt-3 mb-6 pl-1
                 text-3xl font-semibold">Description :</div>
@@ -211,6 +216,7 @@
         </div>
   
    </section>
+
     
     
 

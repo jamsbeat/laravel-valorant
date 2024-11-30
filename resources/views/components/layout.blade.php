@@ -20,71 +20,65 @@
 
 <body class="h-full">
     <div class="min-h-full">
-        <nav class="bg-darkblue ">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <a href="/">
-                                <img class="h-12 w-14" src="{{ asset('images/valorant-logo3.png') }}" alt="Valorant">
-                            </a>
-                        </div>
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4">
-                                <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                                <x-nav-link href="/agents" :active="request()->is('agents')">Agents</x-nav-link>
-                                <x-nav-link href="/maps" :active="request()->is('maps')">Maps</x-nav-link>
+        <nav class="border-b-2 border-gray-400/20 relative">
+            <div class="flex items-center justify-between p-3">
+                <!-- Logo Section -->
+                <div class="flex justify-start">
+                    <a href="/">
+                        <img class="h-10 ml-4" src="{{ Vite::asset('images/valorant-icon.png') }}" alt="Valorant" />
+                    </a>
+                </div>
+        
+                <!-- Centered Services Link -->
+                <div class="absolute left-1/2 transform -translate-x-1/2">
+                    <x-nav-link href="/" :active="request()->is('home')" class="text-center">Home</x-nav-link>
+                    <x-nav-link href="/agents" :active="request()->is('agents')" class="text-center">Agents</x-nav-link>
+                    <x-nav-link href="/maps" :active="request()->is('about')" class="text-center">Maps</x-nav-link>
+                </div>
+        
+                <!-- Auth/Guest Section -->
+                <div class="hidden md:block">
+                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
+                        @guest
+                            <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
+                            <x-nav-link href="/register" :active="request()->is('register')">Register &#129170;</x-nav-link>
+                        @endguest
+        
+                        @auth
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <button type="submit" class="text-logoblue  rounded-md px-3 py-2 text-sm font-medium font-suse inline-block uppercase after:duration-1000 after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-valred after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100 hover:bg-primary hover:text-valred transition-all duration-300 ease-in-out">Log Out</button>
+                            </form>
+        
+                            <style>
+                                [x-cloak] {
+                                    display: none !important;
+                                }
+                            </style>
+        
+                            <div x-data="{ open: false }" class="inline-flex relative cursor-pointer">
+                                <x-nav-link @click="open = ! open" class="py-2">
+                                    {{ auth()->user()->first_name }}
+                                </x-nav-link>
+        
+                                <div x-cloak x-show="open" @click.away="open = false" class="absolute top-12 left-0 p-3 bg-white border border-gray-200 rounded-lg shadow w-auto">
+                                    <x-small-nav href="/profile" :active="request()->is('profile')" class="py-2">Profile</x-small-nav>
+                                    <x-small-nav href="/settings" :active="request()->is('settings')">Settings</x-small-nav>
+                                </div>
                             </div>
-                        </div>
+                        @endauth
                     </div>
-                    <div class="hidden md:block">
-                        <div class="ml-4 flex items-center md:ml-6 space-x-4">
-                            @guest
-                                <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
-                                <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
-                            @endguest
-
-                            @auth
-                                    <form method="POST" action="/logout">
-                                        @csrf
-
-                                        <button class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-gray-300 shadow-sm hover:bg-gray-700 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-suse" type="submit">Log Out</button>
-                                    </form>
-
-                                    <style>
-                                        [x-cloak] { display: none !important; }
-                                    </style>
-                        
-                                    
-                                    
-                                    <div x-data="{ open: false }" class="inline-flex relative cursor-pointer">
-                                        <x-nav-link @click="open = ! open" class="">
-                                            {{ auth()->user()->first_name }}
-                                        </x-nav-link>
-                                    
-                                        <div x-cloak x-show="open" @click.away="open = false" 
-                                            class="absolute top-12 left-0 p-2 bg-white border border-gray-200 rounded-lg shadow w-auto">
-                                            <a href="/profile" class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Profile</a>
-                                            <a class="px-2 py-1 cursor-pointer hover:bg-gray-700 hover:text-white rounded-md">Settings</a>
-                                        </div>
-                                    </div>
-                            @endauth
-                        </div>
-                    </div>
-                          
-                    <head>
-                        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
-                    </head>
                 </div>
             </div>
         </nav>
 
-
-        <header class="bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight">{{ $heading }}</h1>
-            </div>
-        </header>
+        @if(trim($heading) !== '')
+            <header class="bg-white shadow">
+                <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold tracking-tight">{{ $heading }}</h1>
+                </div>
+            </header>
+        @endif
 
         <main>
             <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">

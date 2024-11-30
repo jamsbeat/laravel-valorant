@@ -3,68 +3,55 @@
 
     </x-slot:heading>
 
-    <section class="max-w-screen">
-        <body class="w-screen">
-            <div class="pb-10 mt-28">
-                <div class="text-8xl font-bold font-valorant flex justify-center">
+    <section class="max-w-screen min-h-1/2 pb-[250px]">
+        <body class="w-screen h-full">
+            <div class="pt-[150px]">
+                <div class="text-8xl text-valred font-bold font-valorant flex justify-center">
                     VALORANT
                 </div>
-                <div class="flex justify-center p-10">
-                    <a href="https://playvalorant.com/en-gb/platform-selection/ " class="font-suse bg-black text-white px-6 py-2 shadow-lg rounded-full transition-all duration-300 hover:scale-110">
+                <div class="flex justify-center p-8">
+                    <a href="https://playvalorant.com/en-gb/platform-selection/ " class="font-suse bg-valblack text-white px-6 py-2 shadow-lg rounded-full transition-all duration-300 hover:scale-110">
                         Play For Free
                     </a>
+                </div>
+                <div class="flex justify-center p-8 border-t-2 border-gray-400/40 ">     
+                    <p class="mb-3 text-center text-gray-500 dark:text-gray-400 w-1/2">Track work across the enterprise through an open, 
+                        collaborative platform. Link issues across Jira and ingest data from other software development tools, so your 
+                        IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, 
+                        and changes.
+                    </p>
                 </div>
             </div>
         </body>
     </section>
 
-    <section class="pb-16">
-        <body class="bg-gray-100 flex justify-center items-center h-screen">
-            <div class="grid grid-cols-3 border-t border-black pt-16 ">
-                <div class="w-full flex justify-center">
-                    <a href="/agents">
-                        <div class="bg-white shadow-md overflow-hidden rounded-lg">
-                            <div class=" w-full relative mx-auto h-auto overflow-hidden">
-                                <img class="w-full h-48 relative z-0 transition-all duration-300 hover:scale-110" src="{{ asset('images/agents-photo.jpg') }}" alt="Image 1">
-                            </div>
-                            <div class="p-4">
-                                <div class="block text-lg font-semibold font-suse text-black ">
-                                    Agents
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="w-full flex justify-center">
-                    <a href="/maps">
-                        <div class="bg-white shadow-md overflow-hidden rounded-lg">
-                            <div class=" w-full relative mx-auto h-auto overflow-hidden">
-                                <img class="w-full h-48 relative z-0 transition-all duration-300 hover:scale-110" src="{{ asset('images/abyss-bg.jpg') }}" alt="Image 1">
-                            </div>
-                            <div class="p-4">
-                                <div class="block text-lg font-semibold font-suse text-black ">
-                                    Maps
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="w-full flex justify-center">
-                    <a href="/forum">
-                        <div class="bg-white shadow-md overflow-hidden rounded-lg">
-                            <div class=" w-full relative mx-auto h-auto overflow-hidden">
-                                <img class="w-full h-48 relative z-0 transition-all duration-300 hover:scale-110" src="{{ asset('images/abyss-bg.jpg') }}" alt="Image 1">
-                            </div>
-                            <div class="p-4">
-                                <div class="block text-lg font-semibold font-suse text-black ">
-                                    Forum
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>    
-        </body>
-    </section>
+    <section>
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+            <div>
+              <div class="max-w-lg md:max-w-none">
+                <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </h2>
+      
+                <p class="mt-4 text-gray-700">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloremque saepe
+                  architecto maiores repudiandae amet perferendis repellendus, reprehenderit voluptas
+                  sequi.
+                </p>
+              </div>
+            </div>
+      
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                class="rounded"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
     <section class="pt-16 pb-16">
         <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -174,7 +161,9 @@
     <section class="pt-16">
         <div class="">
             <div class="w-full max-w-screen items-center">
-                <div class="text-3xl p-4 py-2 h-[60px] font-bold font-outfit">• News</div>
+                <x-header>
+                    • News
+                </x-header>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="/forum">
                         <div class="bg-white shadow-md rounded-lg overflow-hidden flex">
