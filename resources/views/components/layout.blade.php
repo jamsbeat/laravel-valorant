@@ -13,19 +13,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100..900&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--AlpineJS-->
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
     <!--LiveWire-->
         @livewireStyles
 </head>
 
 <body class="h-full">
     <div class="min-h-full">
-        <nav class="border-b-2 border-gray-400/20 relative">
-            <div class="flex items-center justify-between p-3">
+        <nav class="border-b-2 border-gray-400/20 relative shadow-xs bg-valwhite">
+            <div class="flex items-center justify-between p-3 bg-valwhite">
                 <!-- Logo Section -->
                 <div class="flex justify-start">
                     <a href="/">
-                        <img class="h-10 ml-4" src="{{ Vite::asset('images/valorant-icon.png') }}" alt="Valorant" />
+                        <img class="h-14 ml-4" src="{{ asset('images/valred-logo.png') }}" alt="Valorant" />
                     </a>
                 </div>
         
@@ -38,10 +38,10 @@
         
                 <!-- Auth/Guest Section -->
                 <div class="hidden md:block">
-                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
+                    <div class="ml-6 pr-6 flex items-center md:ml-6 space-x-4">
                         @guest
                             <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
-                            <x-nav-link href="/register" :active="request()->is('register')">Register &#129170;</x-nav-link>
+                            <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
                         @endguest
         
                         @auth
@@ -61,7 +61,7 @@
                                     {{ auth()->user()->first_name }}
                                 </x-nav-link>
         
-                                <div x-cloak x-show="open" @click.away="open = false" class="absolute top-12 left-0 p-3 bg-white border border-gray-200 rounded-lg shadow w-auto">
+                                <div x-cloak x-show="open" @click.away="open = false" class="absolute top-12 left-0 p-0.5 bg-white border border-gray-200 rounded-lg shadow w-auto">
                                     <x-small-nav href="/profile" :active="request()->is('profile')" class="py-2">Profile</x-small-nav>
                                     <x-small-nav href="/settings" :active="request()->is('settings')">Settings</x-small-nav>
                                 </div>

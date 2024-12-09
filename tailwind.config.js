@@ -17,7 +17,7 @@ export default {
         'suse': ['SUSE', 'sans-serif'],
         'outfit': ['Outfit', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
-        'valorant': ['Valorant', 'sans-serif']
+        'valorant': ['Valorant', 'sans-serif'],
       },
       colors: {
         darkblue: '#0e1822',
@@ -25,6 +25,7 @@ export default {
         valred: '#ff4654',
         valdred: '#ba3a46',
         valblack: '#111823',
+        valwhite: '#f3f4f6',
       },
     },
   },

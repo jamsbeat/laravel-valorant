@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        <div class="font-semibold font-outfit underline text-4xl flex items-center" style="color: {{ $agent->color }}">
+        <div class="font-semibold font-outfit underline text-4xl flex items-center pl-1" style="color: {{ $agent->color }}">
             <span>{{ $agent->name }}</span>
             @auth
                 @livewire('favorite-agent', ['agentId' => $agent->id])
@@ -10,12 +10,12 @@
 
      <section class="max-w-screen pb-12 pt-12" x-data="{ open: null }">
         <div class="flex justify-between items-start">
-            <div class="flex flex-col w-[600px] p-4 font-montserrat rounded bg-gray-400/40">
+            <div class="flex flex-col w-[600px] p-6 font-montserrat rounded-3xl bg-gray-400/20">
 
                 <div class="mt-3 mb-6 pl-1
                 text-3xl font-semibold">Description :</div>
                 <!-- Agent description -->
-                <div class="font-montserrat bg-white rounded border border-black/10 p-4 text-xl">{{ $agent->description }}</div>
+                <div class="font-montserrat bg-white rounded-xl border border-black/10 p-4 text-xl">{{ $agent->description }}</div>
 
                 <div class="mt-6 pl-1
                 text-3xl font-semibold">Abilities :</div>
@@ -23,7 +23,7 @@
                 <!-- Grid section directly under the description -->
                 <div class="grid grid-cols-3 gap-4 mt-6 text-2xl mb-3">
                     <!-- Grid Item 1 -->
-                    <div @click="open = 'item1'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
+                    <div @click="open = 'item1'" class="group cursor-pointer bg-white p-4 rounded-2xl border border-black/10
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
                             <img src="{{ $agent->ability->icon_1 }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <!-- Grid Item 2 -->
-                    <div @click="open = 'item2'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
+                    <div @click="open = 'item2'" class="group cursor-pointer bg-white p-4 rounded-2xl border border-black/10
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
                             <img src="{{ $agent->ability->icon_2 }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <!-- Grid Item 3 -->
-                    <div @click="open = 'item3'" class="group cursor-pointer bg-white p-4 rounded-md border border-black/10
+                    <div @click="open = 'item3'" class="group cursor-pointer bg-white p-4 rounded-2xl border border-black/10
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
                             <img src="{{ $agent->ability->icon_3 }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <!-- Ultimate -->
-                <div @click="open = 'ultimate'" class="cursor-pointer flex flex-cols mt-3 bg-white rounded-md border border-black/10
+                <div @click="open = 'ultimate'" class="cursor-pointer flex flex-cols mt-3 bg-white rounded-2xl border border-black/10
                 hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                     <div class="p-4">
                         <!-- Image with dynamic background color on hover -->
@@ -87,7 +87,7 @@
             <!-- Agent Portrait -->
             <div class="flex flex-col items-end">
                 <div class="rounded mt-3">
-                    <img src="{{ $agent->portrait }}" alt="" class="w-auto h-[700px]">
+                    <img src="{{ $agent->portrait }}" alt="" class="w-full h-[700px] rounded-3xl">
                 </div>
             </div>
         </div>
@@ -95,53 +95,53 @@
         <!-- Pop-up Modals for Grid Items and Ultimate -->
         <!-- Modal for Grid Item 1 -->
         <div x-show="open === 'item1'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div @click.stop class="bg-white p-6 rounded w-[400px]">
+            <div @click.stop class="bg-white p-6 rounded-3xl w-[400px]">
                 <h2 class="text-xl font-bold mb-4">{{ $agent->ability->name_1 }}</h2>
                 <p>{{ $agent->ability->description_1 }}</p>
                 <video autoplay loop muted>
                     <source class="" src="" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
-                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded-3xl">Close</button>
             </div>
         </div>
 
         <!-- Modal for Grid Item 2 -->
         <div x-show="open === 'item2'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div @click.stop class="bg-white p-6 rounded w-full max-w-md mx-4 sm:mx-auto">
+            <div @click.stop class="bg-white p-6 rounded-3xl w-full max-w-md mx-4 sm:mx-auto">
                 <h2 class="text-xl font-bold mb-4">{{ $agent->ability->name_2 }}</h2>
                 <p>{{ $agent->ability->description_2 }}</p>
                 <video autoplay loop muted>
                     <source class="" src="" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
-                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded-3xl">Close</button>
             </div>
         </div>
 
         <!-- Modal for Grid Item 3 -->
         <div x-show="open === 'item3'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div @click.stop class="bg-white p-6 rounded w-full max-w-md mx-4 sm:mx-auto">
+            <div @click.stop class="bg-white p-6 rounded-3xl w-full max-w-md mx-4 sm:mx-auto">
                 <h2 class="text-xl font-bold mb-4">{{ $agent->ability->name_3 }}</h2>
                 <p>{{ $agent->ability->description_3 }}</p>
                 <video autoplay loop muted>
                     <source class="" src="" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
-                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
-            </div>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded-3xl">Close</button>
+            </div>       
         </div>
 
         <!-- Modal for Ultimate -->
         <div x-show="open === 'ultimate'" @click="open = null" class="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div @click.stop class="bg-white p-6 rounded w-full max-w-md mx-4 sm:mx-auto">
+            <div @click.stop class="bg-white p-6 rounded-3xl w-full max-w-md mx-4 sm:mx-auto">
                 <h2 class="text-xl font-bold mb-4">{{ $agent->ability->ultimate }}</h2>
                 <p>{{ $agent->ability->description_u }}</p>
                 <video class="mt-2" autoplay loop muted>
                     <source src="https://www.mandatory.gg/wp-content/uploads/mandatory-valorant-database-agent-clove-ruse-ability-e.mp4" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
-                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded">Close</button>
+                <button @click="open = null" class="mt-4 bg-black text-white px-4 py-2 rounded-3xl">Close</button>
             </div>
         </div>
     </section>
@@ -164,7 +164,7 @@
         
             <!-- Role Icon Section -->
             <div class="p-4">
-                <img src="{{ $agent->role_icon }}" alt="" class="bg-black h-[133px] w-[133px] rounded-full 
+                <img src="{{ $agent->role_icon }}" alt="" class="bg-black w-full rounded-full 
                 border-2 border-black">
             </div>
         </div>

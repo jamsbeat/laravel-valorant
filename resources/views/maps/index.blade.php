@@ -13,7 +13,7 @@
             </x-description>
             <div class="flex flex-col items-end">
                 <div class="rounded border border-black/10">
-                    <img src="https://placeholder.com/450x220" alt="" class="w-[450px] h-[220px]">
+                    <img src="https://placeholder.com/450x220" alt="" class="w-[450px] h-[220px] rounded-3xl shadow-lg contrast-0 brightness-125">
                 </div>
             </div>
         </div>

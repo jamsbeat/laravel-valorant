@@ -11,15 +11,15 @@
                 Whether you’re looking to master a specific agent or simply learn about the different playstyles, this index is your gateway to the world of Valorant.
             </x-description>
             <div class="flex flex-col items-end">
-                <div class="rounded border border-black/10">
-                    <img src="https://placeholder.com/450x200" alt="" class="w-[450px] h-[200px]">
+                <div class="">
+                    <img src="https://placeholder.com/450x200" alt="" class="rounded-3xl shadow-lg contrast-0 brightness-125">
                 </div>
             </div>
         </div>
     </section>
     
     
-    <div class="">
+    <div>
         @livewire('agent-search')
     </div>
 

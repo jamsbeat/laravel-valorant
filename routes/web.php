@@ -18,11 +18,13 @@ Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
 
+// Profile
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 
+// Agents
 Route::controller(AgentController::class)->group(function () {
     Route::get('/agents', 'index');
-    Route::get('/agents/{agent}', 'show');
+    Route::get('/agents/{agent:name}', 'show');
 });
 
 Route::controller(MapController::class)->group(function () {
