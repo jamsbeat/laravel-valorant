@@ -21,16 +21,12 @@ class AgentController extends Controller
         ]);
     }
 
-    public function show(Agent $agent)
+    public function show($name)
     {
-        return view('agents.show', ['agent' => $agent]);
+        $agent = Agent::where('name', $name)->firstOrFail();
+        return view('agents.show', compact('agent'));   
     }
 
-    public function showAgents($id) {
-        $agent = Agent::find($id);
-        return view('agent-list', compact('agent'));
-    }
-    
     #public function favoriteAgent($agentId)
     #{
     #    $user = auth()->user();

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\FavoriteAgent; // Ensure you import the correct model
+use App\Models\FavoriteAgent;
 
 class User extends Authenticatable
 {
@@ -22,6 +22,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
+        'first_name',
+        'last_name',
         'password',
         'password_confirmation',
         'remember_token',

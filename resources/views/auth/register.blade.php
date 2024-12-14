@@ -16,7 +16,6 @@
                             </svg>
                             <input class="w-full pl-10 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-valred focus:border-transparent" 
                             name="first_name" id="first_name" type="first_name" placeholder="First Name" required />
-
                             <x-form-error name="first_name" />
                         </label>
                     </div>

@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Valorant</title>
+    <link rel="icon" href="{{ asset('images/valred-logo.png') }}">
     @vite(['resources/js/app.js', 'resources/css/app.css'])
     <!--Google Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +22,11 @@
 <body class="h-full">
     <div class="min-h-full">
         <nav class="border-b-2 border-gray-400/20 relative shadow-xs bg-valwhite">
-            <div class="flex items-center justify-between p-3 bg-valwhite">
+            <div class="flex items-center justify-between p-3">
                 <!-- Logo Section -->
                 <div class="flex justify-start">
                     <a href="/">
-                        <img class="h-14 ml-4" src="{{ asset('images/valred-logo.png') }}" alt="Valorant" />
+                        <img class="h-14 ml-4" src="{{ asset('images/valred-logo.png') }}" alt="Valorant" class="bg-none" />
                     </a>
                 </div>
         

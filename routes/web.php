@@ -11,15 +11,19 @@ Route::view('/', 'home');
 Route::view('/admin', 'admin');
 
 // Auth
-Route::get('/register', [RegisteredUserController::class, 'create']);
-Route::post('/register', [RegisteredUserController::class, 'store']);
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [RegisteredUserController::class, 'create']);
+    Route::post('/register', [RegisteredUserController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
-Route::post('/login', [SessionController::class, 'store']);
+    Route::get('/login', [SessionController::class, 'create']);
+    Route::post('/login', [SessionController::class, 'store']);
+});
 Route::post('/logout', [SessionController::class, 'destroy']);
 
 // Profile
-Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show']);
+});
 
 // Agents
 Route::controller(AgentController::class)->group(function () {
@@ -30,3 +34,5 @@ Route::controller(AgentController::class)->group(function () {
 Route::controller(MapController::class)->group(function () {
     Route::get('/maps','index');
 });
+
+Route::get('/agent/{name}', [AgentController::class, 'show'])->name('agent.show');

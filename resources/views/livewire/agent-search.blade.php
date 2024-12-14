@@ -13,6 +13,9 @@
     </div>
 
     <div class="flex justify-center items-center">
+        @if ($noResultsMessage)
+            <div class="{{ $errorClasses }}">{{ $noResultsMessage }}</div>
+        @endif
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 md:gap-x-10 lg:gap-x-20">  
             @foreach($agents as $agent)
                 <a href="/agents/{{ $agent->name }}">
@@ -23,7 +26,7 @@
                                 <div class="text-2xl font-bold font-kanit uppercase" style="color: {{ $agent->color }};">
                                     {{ $agent['name'] }}
                                 </div>
-                                <div class="text-gray-400/95 text-sm font-suse pl-1">{{ $agent['role'] }}</div>
+                                <div class="text-gray-400/95 text-sm font-suse pl-1 shadow-md">{{ $agent['role'] }}</div>
                                 <div></div>
                             </div>
                             <!-- Role Icon Button with Image Swap on Hover -->

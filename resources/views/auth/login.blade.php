@@ -16,8 +16,8 @@
                             </svg>
                             <input class="w-full pl-10 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-valred focus:border-transparent" 
                             name="email" id="email" type="email" placeholder="Email" required />
-                            <div class="py-1">
-                                <x-form-error name="email" />\
+                            <div class="">
+                                <x-form-error name="email" />
                             </div>
                         </label>
                     </div>

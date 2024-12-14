@@ -30,19 +30,19 @@
             threshold: 50, // Set the scroll threshold to prevent sensitivity
             content: [
                 {
-                title: 'Lorem <span class=&quot;text-valred&quot;>ipsum</span> dolor sit amet',
+                title: 'Learn about <a href=&quot;/agents&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Agents</a> ',
                 paragraph:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit tenetur doloremque saepe architecto maiores repudiandae.',
+                    'Dive into detailed profiles of every Valorant agent. Learn about their unique abilities and how to use them effectively in battle. Master your favorite agent and dominate your matches!',
                 },
                 {
-                title: 'Neque porro quisquam <span class=&quot;text-valred&quot;>est lorem</span> ipsum',
+                title: 'Learn about <a href=&quot;/maps&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Maps</a>',
                 paragraph:
-                    'Paragraph 2: Neque porro quisquam est qui dolorem ipsum quia dolorsit amet, consectetur, adipisci velit.',
+                    'Explore comprehensive guides to all the Valorant maps. From key chokepoints to strategic layouts, uncover the best ways to navigate and control the battlefield.',
                 },
                 {
-                title: 'Sed ut <span class=&quot;text-valred&quot;>perspiciatis</span> unde',
+                title: 'Learn about <a href=&quot;/guns&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Guns</a>',
                 paragraph:
-                    'Paragraph 3: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
+                    '',
                 },
             ],
             handleScroll(event) {
@@ -92,7 +92,7 @@
 
                 <!-- Paragraph -->
                 <p
-                    class="text-gray-700 max-w-lg mt-4"
+                    class="text-gray-700 max-w-lg mt-1"
                     x-html="content[currentIndex].paragraph"
                 ></p>
                 </div>
@@ -132,8 +132,8 @@
                     <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
                     <h1 class="mt-2 text-2xl font-semibold font-suse tracking-tight text-gray-900 sm:text-4xl">On a mission to <span class="text-valred">empower</span> remote teams</h1>
                     <div class="max-w-xl text-gray-700">
-                        <p class="mt-6">Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id.</p>
-                        <p class="mt-8">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
+                        <p class="mt-6">On a mission to empower Valorant enthusiasts, our platform brings you detailed insights into agents, maps, and weaponry, making it the ultimate resource for players. Dive into personalized features like favoriting your go-to agents and accessing them seamlessly on your profile.</p>
+                        <p class="mt-8">Whether you're strategizing your next match or exploring new agents, our website evolves with you, offering tools and content that enhance your gameplay experience. Join the community, log in, and unlock features designed to make your Valorant journey even more immersive.</p>
                         <p class="mt-8">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
                     </div>
                     </div>
