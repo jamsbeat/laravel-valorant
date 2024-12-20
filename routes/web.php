@@ -23,16 +23,21 @@ Route::post('/logout', [SessionController::class, 'destroy']);
 // Profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'show']);
+    Route::view('/settings', 'settings');
+});
+
+// Settings
+Route::middleware('auth')->group(function () {
+    Route::view('/settings', 'settings');
 });
 
 // Agents
 Route::controller(AgentController::class)->group(function () {
     Route::get('/agents', 'index');
-    Route::get('/agents/{agent:name}', 'show');
+    Route::get('/agents/{agent:id}', 'show');
 });
 
 Route::controller(MapController::class)->group(function () {
     Route::get('/maps','index');
 });
 
-Route::get('/agent/{name}', [AgentController::class, 'show'])->name('agent.show');

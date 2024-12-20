@@ -18,6 +18,10 @@ export default {
         'outfit': ['Outfit', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
         'valorant': ['Valorant', 'sans-serif'],
+        'alumni': ['Alumni Sans Inline One, sans-serif'],
+        'rammetto': ['Rammetto One, sans-serif'],
+        'oxanium': ['Oxanium, sans-serif'],
+
       },
       colors: {
         darkblue: '#0e1822',
@@ -26,9 +30,13 @@ export default {
         valdred: '#ba3a46',
         valblack: '#111823',
         valwhite: '#f3f4f6',
+        rgray: '#605354',
       },
     },
   },
-  plugins: [],
+  plugins: [
+      require('daisyui'),
+      require("@designbycode/tailwindcss-text-stroke"),
+  ],
 }
 

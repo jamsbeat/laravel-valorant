@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Agent;
 
-class AgentLore extends Model
+class Lore extends Model
 {
+    /** @use HasFactory<\Database\Factories\LoreFactory> */
     use HasFactory;
-
-    protected $fillable = ['agent_id', 'lore', 'past_experience', 'appearance'];
 
     public function agents()
     {

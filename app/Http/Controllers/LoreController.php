@@ -1,10 +1,10 @@
-<?php
+\<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AgentLoreController extends Controller
+class LoreController extends Controller
 {
     //
 }

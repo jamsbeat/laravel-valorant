@@ -3,31 +3,97 @@
 
     </x-slot:heading>
 
-    <section class="max-w-1/2">
-        <body class="w-1/2 h-full">
-            <div class="pt-[125px] pb-[200px]">
-                <div class="text-8xl text-valred font-bold font-sourcecodepro flex justify-center">
-                    VALORANT
+    <section class="h-screen max-w-1/2 text-center  ">
+        <div class="h-full">
+            <div class="pt-[150px] pb-20">
+                <div class="">
+                    <h1 x-data="{
+                        startingAnimation: { opacity: 0, scale: 4 },
+                        endingAnimation: { opacity: 1, scale: 1, stagger: 0.07, duration: 1, ease: 'expo.out' },
+                        addCNDScript: true,
+                        animateText() {
+                            $el.classList.remove('invisible');
+                            gsap.fromTo($el.children, this.startingAnimation, this.endingAnimation);
+                        },
+                        splitCharactersIntoSpans(element) {
+                            text = element.innerHTML;
+                            modifiedHTML = [];
+                            for (var i = 0; i < text.length; i++) {
+                                attributes = '';
+                                if(text[i].trim()){ attributes = 'class=\'inline-block\''; }
+                                modifiedHTML.push('<span ' + attributes + '>' + text[i] +   '</span>');
+                            }
+                            element.innerHTML = modifiedHTML.join('');
+                        },
+                        addScriptToHead(url) {
+                            script = document.createElement('script');
+                            script.src = url;
+                            document.head.appendChild(script);
+                        }
+                    }"
+                                        x-init="
+                        splitCharactersIntoSpans($el);
+                        if(addCNDScript){
+                            addScriptToHead('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js');
+                        }
+                        gsapInterval = setInterval(function(){
+                            if(typeof gsap !== 'undefined'){
+                                animateText();
+                                clearInterval(gsapInterval);
+                            }
+                        }, 5);
+                    "
+                        class="text-8xl text-valred font-extrabold font-valorant flex justify-center text-stroke-1 text-stroke-valblack"
+                    >
+                        VALORANT
+                    </h1>
                 </div>
-                
-                <div class="flex justify-center py-6">
-                    <a href="https://playvalorant.com/en-gb/platform-selection/"
-                    class="font-suse bg-valblack text-white px-6 py-2 shadow-xs rounded-3xl transition-all duration-300 hover:scale-110">
-                        PLAY FOR FREE
+
+
+                <div x-data="{ showButton: false }" x-init="setTimeout(() => showButton = true, 2250)"
+                        class="flex justify-center py-6">
+                    <a  href="https://playvalorant.com/en-gb/platform-selection/"
+                        x-show="showButton"
+                        x-transition:enter="transition-opacity ease-in duration-500"
+                        x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100"
+                        class="absolute font-suse bg-transparent font-semibold border-[3px] border-valblack text-valred hover:shadow-md ease-in-out px-6 py-2 rounded-3xl transition-all duration-300 hover:scale-110 hover:font-bold">
+
+                        PLAY FOR <span class="group-hover:shadow-lg font-bold">FREE</span>
                     </a>
+                    <div class="mx-auto pt-[75px] flex justify-center "
+                         x-data="{showText: false}" x-init="setTimeout(() => showText = true, 2250)">
+                        @if(auth()->user())
+                            <div class="text-center text-valblack pt-8 border-t text-lg font-semibold"
+                                 x-show="showText"
+                                 x-transition:enter="transition-opacity ease-in duration-500"
+                                 x-transition:enter-start="opacity-0"
+                                 x-transition:enter-end="opacity-100">
+                                Thank you for logging in  <a href="/profile" class="font-extrabold text-valred hover:cursor-pointer">{{ auth()->user()->first_name }}!</a> Since you are logged in, you can <br> select your <a href="/agents" class="text-valred font-bold hover:underline hover:cursor-pointer">favorite agents</a> and then view them on your <a href="/profile" class="font-bold text-valred hover:underline hover:cursor-pointer">profile</a> page.
+                            </div>
+                        @else
+                            <div class="text-center text-valblack pt-8 border-t text-lg font-semibold"
+                                 x-show="showText"
+                                 x-transition:enter="transition-opacity ease-in duration-500"
+                                 x-transition:enter-start="opacity-0"
+                                 x-transition:enter-end="opacity-100">
+                                 Welcome to <a href="/" class="text-valred font-extrabold">Valorant!</a> To get started, you can <a href="/register" class="font-bold text-valred hover:underline hover:cursor-pointer">register</a> for an account <br> or <a href="/login" class="font-bold text-valred hover:underline hover:cursor-pointer">log in</a> if you already have an account.
+                            </div>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </body>
+        </div>
     </section>
 
 
 
-    <section class="h-full flex items-center justify-center pb-24 pt-12">
+    <section class="h-full flex items-center justify-center pb-24">
         <div
             x-data="{
             currentIndex: 0,
             scrollDelta: 0,
-            threshold: 50, // Set the scroll threshold to prevent sensitivity
+            threshold: 100, // Set the scroll threshold to prevent sensitivity
             content: [
                 {
                 title: 'Learn about <a href=&quot;/agents&quot; class=&quot;text-valred text-semibold hover:underline&quot;>Agents</a> ',
@@ -80,7 +146,7 @@
                 </div>
 
                 <!-- Scrollable Container for Title and Paragraph -->
-                <div 
+                <div
                 class="text-left"
                 @wheel.prevent="handleScroll($event)"
                 >
@@ -92,7 +158,7 @@
 
                 <!-- Paragraph -->
                 <p
-                    class="text-gray-700 max-w-lg mt-1"
+                    class="text-gray-700 max-w-lg mt-1 text-lg"
                     x-html="content[currentIndex].paragraph"
                 ></p>
                 </div>
@@ -109,11 +175,11 @@
             </div>
         </div>
     </section>
-    
+
     <section>
         <div class="bg-none py-24 sm:py-28">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2        ">
                 <div class="lg:pr-4">
                     <div class="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
                     <img class="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0" src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
@@ -130,15 +196,15 @@
                 </div>
                 <div>
                     <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
-                    <h1 class="mt-2 text-2xl font-semibold font-suse tracking-tight text-gray-900 sm:text-4xl">On a mission to <span class="text-valred">empower</span> remote teams</h1>
-                    <div class="max-w-xl text-gray-700">
+                    <h1 class=" text-3xl font-semibold font-suse tracking-tight text-valblack sm:text-4xl">On a mission to empower<span class="text-valred font-bold"><br>Valorant</span> teams</h1>
+                    <div class="max-w-xl text-gray-700 text-lg">
                         <p class="mt-6">On a mission to empower Valorant enthusiasts, our platform brings you detailed insights into agents, maps, and weaponry, making it the ultimate resource for players. Dive into personalized features like favoriting your go-to agents and accessing them seamlessly on your profile.</p>
                         <p class="mt-8">Whether you're strategizing your next match or exploring new agents, our website evolves with you, offering tools and content that enhance your gameplay experience. Join the community, log in, and unlock features designed to make your Valorant journey even more immersive.</p>
                         <p class="mt-8">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p>
                     </div>
                     </div>
                     <div class="mt-10 flex">
-                        <a href="#" class="text-base font-semibold leading-7 text-valred">Learn more about our company <span aria-hidden="true">&rarr;</span></a>
+                        <a href="#" class="text-base font-semibold leading-7 text-valred hover:cursor-pointer hover:underline">Learn more about our website <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
             </div>
@@ -147,55 +213,5 @@
 
 
 
-
-    <section class="py-12">
-        <div class="">
-            <div class="w-full max-w-screen items-center">
-                <x-header class="font-suse py-2">
-                    • Lorem <span class="text-valred"> ipsum </span> dolor
-                </x-header>
-                <div class="grid grid-cols-1 gap-6">
-                    <a href="/forum">
-                        <div class="bg-white shadow-md rounded-3xl overflow-hidden flex">
-                            <img class="w-1/4 h-[180px] object-cover" src="https://via.placeholder.com/180" alt="Image 1">
-                            <div class="p-4">
-                                <div class=" text-2xl font-semibold font-suse text-black py-2 underline">
-                                    Lorem <span class="text-valred"> ipsum </span> dolor
-                                </div>
-                                <div class="font-montserrat text-lg text-black ">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/forum">
-                        <div class="bg-white shadow-md rounded-3xl overflow-hidden flex">
-                            <img class="w-1/4 h-[180px] object-cover" src="https://via.placeholder.com/180" alt="Image 1">
-                            <div class="p-4">
-                                <div class=" text-2xl font-semibold font-suse text-black py-2 underline">
-                                    Lorem <span class="text-valred"> ipsum </span> dolor
-                                </div>
-                                <div class="font-montserrat text-lg text-black ">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/forum">
-                        <div class="bg-white shadow-md rounded-3xl overflow-hidden flex">
-                            <img class="w-1/4 h-[180px] object-cover" src="https://via.placeholder.com/180" alt="Image 1">
-                            <div class="p-4">
-                                <div class=" text-2xl font-semibold font-suse text-black py-2 underline">
-                                    Lorem <span class="text-valred"> ipsum </span> dolor
-                                </div>
-                                <div class="font-montserrat text-lg text-black ">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>  
-        </div>
-    </section>
 </x-layout>
+

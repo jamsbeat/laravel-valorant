@@ -7,7 +7,7 @@
 
             <input wire:model.live="search"
             placeholder="Search agents or roles ..."
-            class="w-1/2 pl-10 p-2 border rounded-3xl focus:outline-none focus:ring-2 focus:ring-valred focus:border-transparent"
+            class="w-1/2 pl-10 p-2 border-2 border-valred bg-transparent rounded-2xl focus:outline-none focus:ring-2 focus:ring-valred focus:border-transparent"
             />
         </label>
     </div>
@@ -16,17 +16,17 @@
         @if ($noResultsMessage)
             <div class="{{ $errorClasses }}">{{ $noResultsMessage }}</div>
         @endif
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 md:gap-x-10 lg:gap-x-20">  
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 md:gap-x-10 lg:gap-x-20">
             @foreach($agents as $agent)
-                <a href="/agents/{{ $agent->name }}">
+                <a href="/agents/{{ $agent->id }}">
                     <div class="list-none relative group">
                         <div class="flex items-center w-full min-w-4xl lg:min-w-4xl md:max-w-3xl lg:max-w-full rounded-full bg-gray-800 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg" style="background-image: url(/images/playcard-bg.png)">
-                            <img src="{{ $agent->icon }}" alt="{{ $agent['name'] }}" class="h-20 w-20 border-l border-darkblue rounded-full" />
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="text-2xl font-bold font-kanit uppercase" style="color: {{ $agent->color }};">
-                                    {{ $agent['name'] }}
+                            <img src="{{ $agent->icon }}" alt="{{ $agent['name'] }}" class="h-20 w-20 bg-black border border-black rounded-full" />
+                            <div class="grid grid-cols-2">
+                                <div class="bg-valblack pt-0.5 pl-3" style="color: {{ $agent->color }};">
+                                    <div class="bg-valblack text-2xl font-bold font-valorant uppercase">{{ $agent['name'] }}</div>
+                                    <div class="bg-valblack font-semibold font-suse text-rgray">{{ $agent['role']}}</div>
                                 </div>
-                                <div class="text-gray-400/95 text-sm font-suse pl-1 shadow-md">{{ $agent['role'] }}</div>
                                 <div></div>
                             </div>
                             <!-- Role Icon Button with Image Swap on Hover -->

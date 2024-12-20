@@ -17,7 +17,7 @@ class FavoriteAgent extends Component
         $this->favorited = Auth::check() && Auth::user()->favorites()->where('agent_id', $agentId)->exists();
     }
 
-    public function favorite()
+    public function favorite(): void
     {
         if (!Auth::check()) {
             return;
@@ -33,7 +33,7 @@ class FavoriteAgent extends Component
         } else {
             $user->favorites()->create([
                 'agent_id' => $this->agentId,
-                'user_id' => $user->id, 
+                'user_id' => $user->id,
             ]);
             $this->favorited = true;
         }

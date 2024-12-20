@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('agent_lores', function (Blueprint $table) {
+        Schema::create('lores', function (Blueprint $table) {
             $table->id();
-            $table->text('lores');
-            $table->text('past_experience');
-            $table->text('appearance');
+            $table->string('main');
+            $table->string('description');
+            $table->string('background');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('agent_lores');
+        Schema::dropIfExists('lores');
     }
 };

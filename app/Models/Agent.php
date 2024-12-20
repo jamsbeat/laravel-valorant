@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\AgentLore;
+use App\Models\Lore;
 use App\Models\Ability;
 
 class Agent extends Model
@@ -17,14 +17,13 @@ class Agent extends Model
     {
         return $this->belongsTo(Ability::class);
     }
+    public function favorite()
+    {
+        return $this->belongsToMany(User::class, 'favorite_agents');
+    }
 
     public function lore()
     {
-        return $this->belongsTo(AgentLore::class);
-    }
-
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'favorite_agents');
+        return $this->belongsTo(Lore::class);
     }
 }

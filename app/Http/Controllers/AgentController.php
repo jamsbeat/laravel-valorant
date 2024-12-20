@@ -9,22 +9,21 @@ class AgentController extends Controller
 {
     public function index()
     {
-        $user = auth()->user();
-        $agents = Agent::with('users')
-            ->get()
-            ->sortByDesc(function ($agent) use ($user) {
-                return $agent->users->contains($user);
-            });
+        $agents = Agent::all();
 
         return view('agents.index', [
             'agents' => $agents
         ]);
     }
 
-    public function show($name)
+    public function show($agentId)
     {
-        $agent = Agent::where('name', $name)->firstOrFail();
-        return view('agents.show', compact('agent'));   
+        $agent = Agent::findOrFail($agentId);
+
+        return view('agents.show', [
+            'agent' => $agent,
+            'agentId' => $agentId
+        ]);
     }
 
     #public function favoriteAgent($agentId)
