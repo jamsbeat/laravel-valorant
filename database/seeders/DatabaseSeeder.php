@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             AgentsTableSeeder::class,
             AbilitiesTableSeeder::class,
             MapsTableSeeder::class,
+            UserTableSeeder::class,
+            FavoritesTableSeeder::class,
         ]);
     }
 }

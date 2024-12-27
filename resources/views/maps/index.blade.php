@@ -6,14 +6,14 @@
     <section class="max-w-screen pb-16 border-b border-black pt-10">
         <div class="flex justify-between items-start">
             <x-description>
-                Step into a world designed for tactical brilliance and unforgettable moments. 
-                Each map is meticulously crafted to test your creativity, challenge your team’s synergy, and deliver pulse-pounding highlights. 
+                Step into a world designed for tactical brilliance and unforgettable moments.
+                Each map is meticulously crafted to test your creativity, challenge your team’s synergy, and deliver pulse-pounding highlights.
                 Whether you’re setting up the perfect ambush, pulling off incredible plays, or securing the clutch your team needs, this is your stage to shine.
                 The plays you make here will echo beyond the game — be the strategist, the innovator, the one they’ll remember and imitate for years to come.
             </x-description>
             <div class="flex flex-col items-end">
                 <div class="rounded border border-black/10">
-                    <img src="https://placeholder.com/450x220" alt="" class="w-[450px] h-[220px] rounded-3xl shadow-lg contrast-0 brightness-125">
+                    <img src="https://placeholder.com/450x220" alt="" class="w-[450px] h-[220px] rounded-2xl shadow-lg contrast-0 brightness-125">
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                                         class="flex transition-transform duration-500 ease-in-out transform"
                                         id="carousel-{{ $index }}"
                                     >
-                                    
+
                                     <!-- Slide 1 -->
                                     <div class="min-w-full min-h-1/2 relative">
                                         <img
@@ -41,9 +41,9 @@
                                             alt="Slide 1"
                                             class="w-full h-full object-cover"
                                         />
-                                        
+
                                     </div>
-                
+
                                     <!-- Slide 2 -->
                                     <div class="min-w-full relative">
                                         <img
@@ -53,7 +53,7 @@
                                         />
 
                                     </div>
-                
+
                                     <!-- Slide 3 -->
                                     <div class="min-w-full relative">
                                         <img
@@ -61,11 +61,11 @@
                                             alt="Slide 3"
                                             class="w-full h-full object-cover"
                                         />
-                                        
+
                                     </div>
                                     </div>
                                 </div>
-                    
+
                                 <!-- Navigation buttons -->
                                 <button
                                     class="absolute top-1/2 left-5 transform -translate-y-1/2 p-3 bg-gray-700 bg-opacity-50 rounded-full text-white hover:bg-opacity-75 focus:outline-none"
@@ -106,19 +106,19 @@
                                     </svg>
                                 </button>
                             </div>
-                    
+
                             <script>
                                 let currentIndices = {};
-        
+
                                 function scrollCarousel(direction, index) {
                                     const carousel = document.getElementById(`carousel-${index}`);
                                     const totalSlides = carousel.children.length;
-                                    
+
                                     if (!(index in currentIndices)) {
                                         currentIndices[index] = 0;
                                     }
-        
-                                    currentIndices[index] = 
+
+                                    currentIndices[index] =
                                         (currentIndices[index] + direction + totalSlides) % totalSlides;
                                     carousel.style.transform = `translateX(-${
                                         currentIndices[index] * 100

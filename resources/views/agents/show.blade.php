@@ -10,22 +10,26 @@
 
      <section class="max-w-screen pb-12 pt-12" x-data="{ open: null }">
         <div class="flex justify-between items-start">
-            <div class="flex flex-col w-[600px] p-4 font-montserrat rounded-3xl bg-gray-400/20">
+            <div class="flex flex-col w-[600px] font-montserrat rounded-2xl">
 
-                <div class="mt-3 mb-6 text-center text-valblack
-                text-3xl font-semibold font-suse
-                bg-white rounded-2xl p-4">Description</div>
+                <div class="border">
+                    <div class="text-center text-valblack
+                    text-3xl font-semibold font-suse
+                    bg-white rounded-t-2xl p-4 underline border-b">Description
+                    </div>
+                    <div class="font-montserrat bg-white rounded-b-2xl p-4 text-xl text-valblack">{{ $agent->description }}</div>
+                </div>
                 <!-- Agent description -->
-                <div class="font-montserrat bg-white rounded-2xl border border-black/10 p-4 text-xl text-valblack">{{ $agent->description }}</div>
+
 
                 <div class="mt-6 text-center text-valblack
                 text-3xl font-semibold font-suse
-                bg-white rounded-2xl p-4">Abilities</div>
+                bg-white rounded-t-2xl p-4 border underline">Abilities</div>
 
                 <!-- Grid section directly under the description -->
-                <div class="grid grid-cols-3 gap-4 mt-6 text-2xl mb-3">
+                <div class="grid grid-cols-3 text-2xl border-x">
                     <!-- Grid Item 1 -->
-                    <div @click="open = 'item1'" class="group cursor-pointer bg-white p-4 rounded-2xl border border-black/10
+                    <div @click="open = 'item1'" class="group cursor-pointer bg-white p-4
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
                             <img src="{{ $agent->ability->icon_1 }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
@@ -35,7 +39,7 @@
                         </div>
                     </div>
                     <!-- Grid Item 2 -->
-                    <div @click="open = 'item2'" class="group cursor-pointer bg-white p-4 rounded-2xl border border-black/10
+                    <div @click="open = 'item2'" class="group cursor-pointer bg-white p-4 border-x
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
                             <img src="{{ $agent->ability->icon_2 }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
@@ -45,7 +49,7 @@
                         </div>
                     </div>
                     <!-- Grid Item 3 -->
-                    <div @click="open = 'item3'" class="group cursor-pointer bg-white p-4 rounded-2xl border border-black/10
+                    <div @click="open = 'item3'" class="group cursor-pointer bg-white p-4
                     hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                         <div class="grid grid-cols-1">
                             <img src="{{ $agent->ability->icon_3 }}" alt="" class="bg-gray-300 group-hover:bg-gray-500 transition-all duration-300 ease-in-out
@@ -56,7 +60,7 @@
                     </div>
                 </div>
                 <!-- Ultimate -->
-                <div @click="open = 'ultimate'" class="cursor-pointer flex flex-cols mt-3 bg-white rounded-2xl border border-black/10
+                <div @click="open = 'ultimate'" class="cursor-pointer flex flex-cols bg-white rounded-b-2xl border
                 hover:bg-gray-500 hover:text-white transition-all duration-300 ease-in-out">
                     <div class="p-4 grid grid-cols-2 gap-2">
                         <!-- Image with dynamic background color on hover -->

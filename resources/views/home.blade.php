@@ -3,9 +3,9 @@
 
     </x-slot:heading>
 
-    <section class="h-screen max-w-1/2 text-center  ">
+    <section class="h-screen max-w-1/2 text-center">
         <div class="h-full">
-            <div class="pt-[150px] pb-20">
+        <div class="pt-[150px] pb-20">
                 <div class="">
                     <h1 x-data="{
                         startingAnimation: { opacity: 0, scale: 4 },
@@ -31,7 +31,7 @@
                             document.head.appendChild(script);
                         }
                     }"
-                                        x-init="
+                        x-init="
                         splitCharactersIntoSpans($el);
                         if(addCNDScript){
                             addScriptToHead('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js');
@@ -43,7 +43,7 @@
                             }
                         }, 5);
                     "
-                        class="text-8xl text-valred font-extrabold font-valorant flex justify-center text-stroke-1 text-stroke-valblack"
+                        class="text-8xl text-valred font-extrabold font-valorant flex justify-center"
                     >
                         VALORANT
                     </h1>
@@ -51,28 +51,28 @@
 
 
                 <div x-data="{ showButton: false }" x-init="setTimeout(() => showButton = true, 2250)"
-                        class="flex justify-center py-6">
+                        class="flex justify-center py-4">
                     <a  href="https://playvalorant.com/en-gb/platform-selection/"
                         x-show="showButton"
                         x-transition:enter="transition-opacity ease-in duration-500"
                         x-transition:enter-start="opacity-0"
                         x-transition:enter-end="opacity-100"
-                        class="absolute font-suse bg-transparent font-semibold border-[3px] border-valblack text-valred hover:shadow-md ease-in-out px-6 py-2 rounded-3xl transition-all duration-300 hover:scale-110 hover:font-bold">
+                        class="absolute font-suse bg-transparent text-2xl font-bold text-valred ease-in-out px-6 rounded-3xl transition-all duration-300 hover:scale-110 hover:font-extrabold">
 
-                        PLAY FOR <span class="group-hover:shadow-lg font-bold">FREE</span>
+                        PLAY FOR <span class="group-hover:shadow-lg">FREE</span>
                     </a>
-                    <div class="mx-auto pt-[75px] flex justify-center "
+                    <div class="mx-auto pt-[56px] flex justify-center "
                          x-data="{showText: false}" x-init="setTimeout(() => showText = true, 2250)">
                         @if(auth()->user())
-                            <div class="text-center text-valblack pt-8 border-t text-lg font-semibold"
+                            <div class="text-center text-valblack pt-8 border-t"
                                  x-show="showText"
                                  x-transition:enter="transition-opacity ease-in duration-500"
                                  x-transition:enter-start="opacity-0"
                                  x-transition:enter-end="opacity-100">
-                                Thank you for logging in  <a href="/profile" class="font-extrabold text-valred hover:cursor-pointer">{{ auth()->user()->first_name }}!</a> Since you are logged in, you can <br> select your <a href="/agents" class="text-valred font-bold hover:underline hover:cursor-pointer">favorite agents</a> and then view them on your <a href="/profile" class="font-bold text-valred hover:underline hover:cursor-pointer">profile</a> page.
+                                Thank you for logging in  <a href="/profile" class="font-extrabold text-valred">{{ auth()->user()->first_name }}!</a> Since you are logged in, you can <br> select your <a href="/agents" class="text-valred font-bold hover:underline hover:cursor-pointer">favorite agents</a> and then view them on your <a href="/profile" class="font-bold text-valred hover:underline hover:cursor-pointer">profile</a> page.
                             </div>
                         @else
-                            <div class="text-center text-valblack pt-8 border-t text-lg font-semibold"
+                            <div class="text-center text-valblack pt-8 border-t"
                                  x-show="showText"
                                  x-transition:enter="transition-opacity ease-in duration-500"
                                  x-transition:enter-start="opacity-0"
@@ -168,7 +168,7 @@
             <div>
                 <img
                 src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                class="rounded-3xl shadow-xl brightness-125 saturate-0"
+                class="rounded-2xl shadow-xl brightness-125 saturate-0"
                 alt=""
                 />
             </div>
@@ -181,7 +181,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2        ">
                 <div class="lg:pr-4">
-                    <div class="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
+                    <div class="relative overflow-hidden rounded-2xl bg-gray-900 px-6 pb-9 pt-64 shadow-xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
                     <img class="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0" src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                     <div class="absolute inset-0 bg-gray-900 mix-blend-multiply"></div>
                     <div class="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl" aria-hidden="true">
@@ -206,6 +206,31 @@
                     <div class="mt-10 flex">
                         <a href="#" class="text-base font-semibold leading-7 text-valred hover:cursor-pointer hover:underline">Learn more about our website <span aria-hidden="true">&rarr;</span></a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="py-24 items-center justify-center">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="rounded-2xl w-[560px] shadow-xl brightness-125 saturate-0"
+                        alt=""
+                    />
+                </div>
+                <div class="">
+                    <!-- Title -->
+                    <h2
+                        class="text-3xl font-bold font-suse text-gray-900 sm:text-3xl "
+                    >About <span class="text-valred">Us</span></h2>
+
+                    <!-- Paragraph -->
+                    <p
+                        class="text-gray-700 max-w-lg mt-1 text-lg text-start"
+                    >Sed at risus vel nulla consequat fermentum. Donec et orci mauris. Nullam tempor velit id mi luctus, a scelerisque libero accumsan. In hac habitasse platea dictumst. Cras ac nunc nec massa tristique fringilla.</p>
                 </div>
             </div>
         </div>
